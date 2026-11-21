@@ -107,15 +107,17 @@ em { font-style: italic; }
 .hero-num b { display: block; font-family: var(--serif); font-weight: 400; font-size: clamp(96px, 13vw, 190px); line-height: .82; letter-spacing: -.03em; font-variant-numeric: tabular-nums; }
 .hero-num p { margin-top: 18px; font-family: var(--serif); font-size: clamp(22px, 2.2vw, 30px); line-height: 1.2; max-width: 18em; }
 .hero-num p em { color: var(--accent); }
-.bar { margin-top: 30px; display: grid; gap: 10px; max-width: 460px; }
-.bar div { display: grid; grid-template-columns: 112px minmax(0, 1fr) 56px; gap: 12px; align-items: center; font-size: 13.5px; }
-.bar i { display: block; height: 12px; background: var(--line); border-radius: 2px; }
-.bar i.me { background: var(--accent); }
-.bar i.all { opacity: .6; }
-.bar span:last-child { text-align: right; font-variant-numeric: tabular-nums; }
+.cmp { margin-top: 30px; display: grid; gap: 10px; max-width: 460px; }
+.cmp h3 { margin-top: 10px; font-size: 12px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--mute); }
+.cmp h3:first-child { margin-top: 0; }
+.cmp div { display: grid; grid-template-columns: 84px minmax(0, 1fr) 60px; gap: 12px; align-items: center; font-size: 13.5px; }
+.cmp i { display: block; height: 12px; background: var(--line); border-radius: 2px; }
+.cmp i.me { background: var(--accent); }
+.cmp span:last-child { text-align: right; font-variant-numeric: tabular-nums; }
+.side-k { font-size: 12px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--mute); margin-bottom: -10px; }
 .side { display: grid; gap: 26px; }
 .side .stat { border-top: 1px solid var(--ink); padding-top: 12px; }
-.side .stat b { font-family: var(--serif); font-weight: 500; font-size: 40px; line-height: 1; font-variant-numeric: tabular-nums; }
+.side .stat b { font-family: var(--serif); font-weight: 500; font-size: 40px; line-height: 1; font-variant-numeric: lining-nums tabular-nums; }
 .side .stat span { display: block; margin-top: 6px; font-size: 14px; color: var(--mute); }
 .source { margin-top: 32px; font-size: 13px; color: var(--mute); max-width: 60em; }
 
@@ -183,7 +185,7 @@ em { font-style: italic; }
   .clip figcaption p { font-size: 13.5px; }
   .stills { grid-template-columns: minmax(0, 1fr); }
   .services, .quotes, .res, .facts { grid-template-columns: minmax(0, 1fr); }
-  .bar div { grid-template-columns: 96px minmax(0, 1fr) 52px; }
+  .cmp div { grid-template-columns: 76px minmax(0, 1fr) 56px; }
   .steps { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .about .pic, .about .txt { grid-column: 1 / -1; }
 }
@@ -271,24 +273,28 @@ em { font-style: italic; }
   </section>
 
   <section class="section" aria-labelledby="h-results">
-    <div class="head"><h2 id="h-results">Results</h2><p>A monthly hotel and spa client runs its Meta ads on Reels I film. One offer Reel, September 2026.</p></div>
+    <div class="head"><h2 id="h-results">Results</h2><p>A hotel and spa client ran my Reels and its own static post side by side on Meta. Same brand, same audience, July to November 2026.</p></div>
     <div class="res">
       <div class="hero-num">
-        <b>€0.09</b>
-        <p>per link click, about <em>5× cheaper</em> than the average Meta travel ad.</p>
-        <div class="bar" role="img" aria-label="Cost per link click: Linda's Reel €0.09, travel average $0.51, all industries $0.70">
-          <div><span>Linda's Reel</span><i class="me" style="width:14%"></i><span>€0.09</span></div>
-          <div><span>Travel average</span><i style="width:73%"></i><span>$0.51</span></div>
-          <div><span>All industries</span><i class="all" style="width:100%"></i><span>$0.70</span></div>
+        <b>+60%</b>
+        <p>more clicks than the brand's static ad, at <em>a third less</em> per click.</p>
+        <div class="cmp" role="img" aria-label="Click-through rate: Linda's Reels 5.7%, static ad 3.6%. Cost per click: Linda's Reels €0.022, static ad €0.033.">
+          <h3>Click-through rate</h3>
+          <div><span>My Reels</span><i class="me" style="width:100%"></i><span>5.7%</span></div>
+          <div><span>Static ad</span><i style="width:62%"></i><span>3.6%</span></div>
+          <h3>Cost per click</h3>
+          <div><span>My Reels</span><i class="me" style="width:67%"></i><span>€0.022</span></div>
+          <div><span>Static ad</span><i style="width:100%"></i><span>€0.033</span></div>
         </div>
       </div>
       <div class="side">
-        <div class="stat"><b>1,475</b><span>link clicks from one Reel</span></div>
-        <div class="stat"><b>128,159</b><span>impressions in one month</span></div>
-        <div class="stat"><b>Above average</b><span>Meta's own rating for engagement and conversion on this ad</span></div>
+        <p class="side-k">Attention</p>
+        <div class="stat"><b>31%</b><span>of people watched past the first 3 seconds</span></div>
+        <div class="stat"><b>127,761</b><span>people stopped scrolling to watch</span></div>
+        <div class="stat"><b>~€4</b><span>per 1,000 people who stopped</span></div>
       </div>
     </div>
-    <p class="source">Benchmarks: <a href="https://wordstream.com/blog/facebook-ads-benchmarks-2025" target="_blank" rel="noopener">WordStream Facebook Ads Benchmarks 2025</a>, traffic campaigns, median cost per click (US data, April 2024 to June 2025). €0.09 is about $0.10.</p>
+    <p class="source">Source: Meta Ads Manager export, hotel and spa client, 2 July to 21 November 2026. Seven Reels I filmed (€534 spend, 417,315 impressions) compared with the brand's static post (€60 spend, 51,175 impressions). Clicks are all clicks; attention is 3-second video plays.</p>
   </section>
 
   <section class="section brands-sec" aria-labelledby="h-brands">
