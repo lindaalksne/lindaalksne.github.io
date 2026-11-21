@@ -1,0 +1,414 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Linda Alksne Portfolio</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Linda Alksne: beauty UGC ads with creative direction built in. Hook variations, every placement, usage rights. Skincare, haircare and fragrance.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Hanken+Grotesk:wght@400;500;600&display=swap">
+<style>
+/* Layout: an editorial lookbook. Serif statements, a 12-column grid, 9:16 video tiles set like magazine plates. */
+:root {
+  --bg: #f4eee6;      /* warm cream paper */
+  --paper: #ebe3d8;   /* tile ground */
+  --ink: #2a211c;     /* espresso */
+  --mute: #7d7068;
+  --line: #dcd1c4;
+  --accent: #a0613f;  /* toasted caramel, used sparingly */
+  --serif: "Cormorant Garamond", "Iowan Old Style", Georgia, serif;
+  --sans: "Hanken Grotesk", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #1b1613; --paper: #261f1b; --ink: #f0e8de; --mute: #a89a8f; --line: #3a302a; --accent: #d39a74; color-scheme: dark;
+} }
+:root[data-theme="dark"] {
+  --bg: #1b1613; --paper: #261f1b; --ink: #f0e8de; --mute: #a89a8f; --line: #3a302a; --accent: #d39a74; color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 400 16px/1.55 var(--sans); -webkit-font-smoothing: antialiased; }
+a { color: inherit; text-underline-offset: .2em; text-decoration-thickness: 1px; }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+p, h1, h2, h3, ul, ol, dl, dd, figure, blockquote { margin: 0; padding: 0; }
+ul, ol { list-style: none; }
+.wrap { max-width: 1360px; margin: 0 auto; padding-left: max(20px, env(safe-area-inset-left, 0px)); padding-right: max(20px, env(safe-area-inset-right, 0px)); }
+.mute { color: var(--mute); }
+.eyebrow { font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--mute); }
+.serif { font-family: var(--serif); }
+em { font-style: italic; }
+
+/* Top bar */
+.top { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; padding-block: 22px; border-bottom: 1px solid var(--line); }
+.brand { font-family: var(--serif); font-size: 24px; letter-spacing: .01em; text-decoration: none; }
+.top nav { display: flex; gap: 26px; font-size: 14px; }
+.top nav a { text-decoration: none; }
+.top nav a:hover { text-decoration: underline; }
+
+/* Hero */
+.hero { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 20px; align-items: end; padding-block: clamp(48px, 8vw, 110px) clamp(56px, 8vw, 110px); }
+.hero-text { grid-column: 1 / span 7; display: grid; gap: 28px; }
+.hero h1 { font-family: var(--serif); font-weight: 400; font-size: clamp(46px, 7.4vw, 112px); line-height: .96; letter-spacing: -.02em; text-wrap: balance; }
+.hero h1 em { color: var(--accent); }
+.hero .sub { font-size: clamp(17px, 1.4vw, 19px); max-width: 34em; }
+.cta { display: flex; flex-wrap: wrap; gap: 14px 28px; align-items: center; font-size: 15px; font-weight: 500; }
+.btn { display: inline-block; padding: 13px 22px; background: var(--ink); color: var(--bg); text-decoration: none; border-radius: 999px; }
+.btn:hover { background: var(--accent); }
+.hero-media { grid-column: 9 / span 4; display: grid; gap: 10px; }
+.hero-media figcaption { font-size: 13px; color: var(--mute); }
+
+/* Statement */
+.statement { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 20px; padding-block: clamp(56px, 8vw, 110px); border-top: 1px solid var(--line); }
+.statement .eyebrow { grid-column: 1 / span 3; }
+.statement p.big { grid-column: 4 / span 8; font-family: var(--serif); font-size: clamp(28px, 3.3vw, 48px); line-height: 1.14; letter-spacing: -.01em; text-wrap: pretty; }
+.statement p.small { grid-column: 4 / span 6; margin-top: 8px; font-size: 17px; color: var(--mute); max-width: 36em; }
+
+/* Section shell */
+.section { padding-block: clamp(48px, 7vw, 96px); border-top: 1px solid var(--line); }
+.head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 16px 32px; margin-bottom: 36px; }
+.head h2 { font-family: var(--serif); font-weight: 400; font-size: clamp(34px, 4.2vw, 60px); line-height: 1; letter-spacing: -.015em; }
+.head p { max-width: 30em; color: var(--mute); }
+
+/* Tiles */
+.tile { position: relative; aspect-ratio: 9 / 16; max-width: 100%; background: var(--paper); overflow: hidden; border-radius: 2px; }
+.tile video, .tile img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
+.tile .snd { position: absolute; right: max(10px, env(safe-area-inset-right, 0px)); bottom: 10px; font: 500 11px/1 var(--sans); letter-spacing: .08em; text-transform: uppercase; padding: 7px 10px; border-radius: 999px; border: 0; background: rgba(20, 15, 12, .55); color: #fff; cursor: pointer; }
+.tile .snd:hover { background: rgba(20, 15, 12, .8); }
+
+.filters { display: flex; flex-wrap: wrap; gap: 6px 8px; margin-bottom: 30px; }
+.filters button { font: 500 14px/1 var(--sans); color: var(--mute); background: none; border: 1px solid var(--line); padding: 9px 15px; border-radius: 999px; cursor: pointer; }
+.filters button:hover { color: var(--ink); border-color: var(--mute); }
+.filters button[aria-pressed="true"] { color: var(--bg); background: var(--ink); border-color: var(--ink); }
+
+.grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 44px 20px; }
+.clip figcaption { margin-top: 14px; display: grid; gap: 4px; }
+.clip h3 { font-family: var(--serif); font-weight: 500; font-size: 23px; line-height: 1.1; }
+.clip figcaption p { font-size: 14.5px; line-height: 1.45; color: var(--mute); }
+.clip .fmt { font-size: 12.5px; color: var(--ink); opacity: .75; margin-top: 2px; }
+.clip .tag { font-size: 11.5px; letter-spacing: .12em; text-transform: uppercase; color: var(--accent); }
+
+/* Stills */
+.stills { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+.still .frame { position: relative; aspect-ratio: 4 / 5; max-width: 100%; background: var(--paper); overflow: hidden; border-radius: 2px; }
+.still .frame img, .still .frame video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.still figcaption { margin-top: 12px; font-size: 14.5px; color: var(--mute); }
+.still figcaption b { display: block; font-family: var(--serif); font-weight: 500; font-size: 21px; color: var(--ink); }
+
+/* Services */
+.services { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 20px; }
+.services li { border-top: 1px solid var(--ink); padding-top: 16px; display: grid; gap: 8px; align-content: start; }
+.services h3 { font-family: var(--serif); font-weight: 500; font-size: 26px; line-height: 1.1; }
+.services p { font-size: 15px; color: var(--mute); }
+.note { margin-top: 36px; font-size: 16px; }
+
+/* Results */
+.res { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: clamp(28px, 5vw, 72px); align-items: start; }
+.hero-num b { display: block; font-family: var(--serif); font-weight: 400; font-size: clamp(96px, 13vw, 190px); line-height: .82; letter-spacing: -.03em; font-variant-numeric: tabular-nums; }
+.hero-num p { margin-top: 18px; font-family: var(--serif); font-size: clamp(22px, 2.2vw, 30px); line-height: 1.2; max-width: 18em; }
+.hero-num p em { color: var(--accent); }
+.bar { margin-top: 30px; display: grid; gap: 10px; max-width: 460px; }
+.bar div { display: grid; grid-template-columns: 112px minmax(0, 1fr) 56px; gap: 12px; align-items: center; font-size: 13.5px; }
+.bar i { display: block; height: 12px; background: var(--line); border-radius: 2px; }
+.bar i.me { background: var(--accent); }
+.bar i.all { opacity: .6; }
+.bar span:last-child { text-align: right; font-variant-numeric: tabular-nums; }
+.side { display: grid; gap: 26px; }
+.side .stat { border-top: 1px solid var(--ink); padding-top: 12px; }
+.side .stat b { font-family: var(--serif); font-weight: 500; font-size: 40px; line-height: 1; font-variant-numeric: tabular-nums; }
+.side .stat span { display: block; margin-top: 6px; font-size: 14px; color: var(--mute); }
+.source { margin-top: 32px; font-size: 13px; color: var(--mute); max-width: 60em; }
+
+/* Brands marquee */
+.marquee { --gap: 56px; display: grid; gap: 18px; overflow: hidden; mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); }
+.mrow { display: flex; gap: var(--gap); width: max-content; animation: slide 38s linear infinite; }
+.mrow.rev { animation-direction: reverse; animation-duration: 46s; }
+.marquee:hover .mrow { animation-play-state: paused; }
+.mrow span { font-family: var(--serif); font-size: clamp(38px, 5vw, 72px); line-height: 1.05; white-space: nowrap; }
+.mrow span:nth-child(3n+2) { font-style: italic; color: var(--accent); }
+.mrow span:nth-child(3n) { font-family: var(--sans); font-weight: 600; font-size: clamp(26px, 3.4vw, 48px); letter-spacing: .06em; text-transform: uppercase; align-self: center; }
+.mrow i { font-style: normal; color: var(--line); font-size: clamp(30px, 4vw, 56px); align-self: center; }
+@keyframes slide { to { transform: translateX(calc(-50% - var(--gap) / 2)); } }
+.marquee-foot { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px 24px; margin-top: 32px; font-size: 14px; color: var(--mute); }
+
+/* Quotes */
+.quotes { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 48px 40px; }
+.quotes p { font-family: var(--serif); font-size: clamp(22px, 2.2vw, 30px); line-height: 1.22; text-wrap: pretty; }
+.quotes cite { display: block; margin-top: 12px; font-style: normal; font-size: 13px; letter-spacing: .12em; text-transform: uppercase; color: var(--mute); }
+
+/* Process */
+.steps { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 20px; counter-reset: s; }
+.steps li { counter-increment: s; font-size: 15px; display: grid; gap: 6px; align-content: start; }
+.steps li::before { content: counter(s, decimal-leading-zero); font-family: var(--serif); font-size: 34px; line-height: 1; color: var(--accent); margin-bottom: 10px; }
+.steps strong { font-weight: 600; }
+.steps span { color: var(--mute); }
+
+/* About */
+.about { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 20px; align-items: start; }
+.about .pic { grid-column: 1 / span 4; }
+.about .pic .frame { position: relative; aspect-ratio: 4 / 5; max-width: 100%; overflow: hidden; background: var(--paper); border-radius: 2px; }
+.about .pic img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.about .txt { grid-column: 6 / span 7; display: grid; gap: 22px; }
+.about .txt p.lead { font-family: var(--serif); font-size: clamp(24px, 2.4vw, 34px); line-height: 1.2; }
+.about .txt p { max-width: 38em; }
+.facts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; margin-top: 12px; font-size: 14.5px; }
+.facts dt { color: var(--mute); font-size: 12px; letter-spacing: .12em; text-transform: uppercase; margin-bottom: 4px; }
+
+/* Contact */
+.contact { padding-block: clamp(64px, 9vw, 130px); border-top: 1px solid var(--line); display: grid; gap: 24px; }
+.contact h2 { font-family: var(--serif); font-weight: 400; font-size: clamp(40px, 6vw, 92px); line-height: 1; letter-spacing: -.02em; max-width: 14em; text-wrap: balance; }
+.contact h2 em { color: var(--accent); }
+.email { font-size: clamp(20px, 2.6vw, 34px); font-weight: 500; overflow-wrap: anywhere; }
+.under { display: flex; flex-wrap: wrap; gap: 10px 26px; align-items: center; font-size: 15px; }
+.under button { font: inherit; color: inherit; background: none; border: 0; padding: 0; text-decoration: underline; text-underline-offset: .2em; cursor: pointer; }
+.foot { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 24px; padding-block: 20px 30px; border-top: 1px solid var(--line); font-size: 13px; color: var(--mute); }
+
+@media (max-width: 1000px) {
+  .hero-text { grid-column: 1 / -1; }
+  .hero-media { grid-column: 1 / span 6; }
+  .statement .eyebrow, .statement p.big, .statement p.small { grid-column: 1 / -1; }
+  .grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .services { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 36px; }
+  .steps { grid-template-columns: repeat(3, minmax(0, 1fr)); row-gap: 32px; }
+  .about .pic { grid-column: 1 / span 5; }
+  .about .txt { grid-column: 6 / -1; }
+}
+@media (max-width: 640px) {
+  .top nav { gap: 16px; }
+  .top nav a.opt { display: none; }
+  .hero-media { grid-column: 1 / -1; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+  .hero-media figcaption { grid-column: 1 / -1; }
+  .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px 12px; }
+  .clip h3 { font-size: 19px; }
+  .clip figcaption p { font-size: 13.5px; }
+  .stills { grid-template-columns: minmax(0, 1fr); }
+  .services, .quotes, .res, .facts { grid-template-columns: minmax(0, 1fr); }
+  .bar div { grid-template-columns: 96px minmax(0, 1fr) 52px; }
+  .steps { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .about .pic, .about .txt { grid-column: 1 / -1; }
+}
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } .mrow { animation: none; } }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header class="top">
+    <a class="brand" href="#top" id="top">Linda Alksne</a>
+    <nav aria-label="Main"><a href="#work">Work</a><a class="opt" href="#services">Services</a><a class="opt" href="#about">About</a><a href="#contact">Contact</a></nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-text">
+      <p class="eyebrow">Beauty · Skincare · Haircare</p>
+      <h1>Beauty UGC that stops the scroll, <em>built to be tested</em></h1>
+      <p class="sub">Editorial-quality ads for skincare, haircare and fragrance brands, with creative direction built in. Every concept comes with several hooks, so you can find the winner faster.</p>
+      <div class="cta"><a class="btn" href="#contact">Get rates and availability</a><a href="#work">Watch the ads</a></div>
+    </div>
+    <figure class="hero-media">
+      <div class="tile" data-src="videos/showreel.mp4" data-poster="posters/showreel.jpg" data-nosound></div>
+      <figcaption>Showreel, 16 seconds</figcaption>
+    </figure>
+  </section>
+
+  <section class="statement" aria-label="Approach">
+    <p class="eyebrow">Why creative direction</p>
+    <p class="big">Most UGC looks the same, and the feed scrolls past it. I build a small world around your product, with its own set, props and story, so the first second looks different from every other ad. A thumb that stops is a cheaper click.</p>
+    <p class="small">If your brand is looking for a creator with creative vision, I'm here.</p>
+  </section>
+
+  <section class="section" id="work" aria-labelledby="h-work">
+    <div class="head">
+      <h2 id="h-work">Selected work</h2>
+      <p>Every concept, set and edit here was directed by me. Tap Sound on to hear a video.</p>
+    </div>
+    <div class="filters" role="group" aria-label="Filter by category">
+      <button type="button" id="f-all" data-f="all" aria-pressed="true">All</button>
+      <button type="button" id="f-skin" data-f="skin" aria-pressed="false">Skincare &amp; makeup</button>
+      <button type="button" id="f-hair" data-f="hair" aria-pressed="false">Haircare</button>
+      <button type="button" id="f-scent" data-f="scent" aria-pressed="false">Fragrance</button>
+      <button type="button" id="f-body" data-f="body" aria-pressed="false">Lips &amp; body</button>
+      <button type="button" id="f-life" data-f="life" aria-pressed="false">Lifestyle</button>
+    </div>
+    <div class="grid">
+      <figure class="clip" data-cat="scent"><div class="tile" data-src="videos/fragrance-you-can-taste.mp4" data-poster="posters/fragrance-you-can-taste.jpg"></div><figcaption><span class="tag">Fragrance</span><h3>A scent you can almost taste</h3><p>A gourmand perfume is hard to film. Melting ice cream gives its notes a shape the eye understands at once.</p><span class="fmt">Product-as-object · 15 s · 9:16</span></figcaption></figure>
+      <figure class="clip" data-cat="body"><div class="tile" data-src="videos/lip-oil-styled-like-food.mp4" data-poster="posters/lip-oil-styled-like-food.jpg"></div><figcaption><span class="tag">Lips</span><h3>A lip oil, styled like food</h3><p>Drips, warmth and slow macro shots make the gloss feel rich before it ever touches the lips.</p><span class="fmt">Product-as-object · macro · 16 s · 9:16</span></figcaption></figure>
+      <figure class="clip" data-cat="hair"><div class="tile" data-src="videos/soft-as-meringue.mp4" data-poster="posters/soft-as-meringue.jpg"></div><figcaption><span class="tag">Haircare</span><h3>Softness you can see</h3><p>Meringues beside the bottles give softness a texture, so the result reads before the hair even moves.</p><span class="fmt">Styled demo · 15 s · 9:16</span></figcaption></figure>
+      <figure class="clip" data-cat="skin"><div class="tile" data-src="videos/skincare-talked-through.mp4" data-poster="posters/skincare-talked-through.jpg"></div><figcaption><span class="tag">Skincare</span><h3>Advice, not an advert</h3><p>Talking UGC built like a friend's recommendation: one concern, one routine, one clear reason to try it.</p><span class="fmt">Talking UGC · voiceover · 19 s · 9:16</span></figcaption></figure>
+
+      <figure class="clip" data-cat="skin"><div class="tile" data-src="videos/city-days.mp4" data-poster="posters/city-days.jpg"></div><figcaption><span class="tag">Makeup</span><h3>Made for city days</h3><p>Touch-ups filmed on the street, so the product belongs to a whole day instead of a bathroom shelf.</p><span class="fmt">On-location demo · 15 s · 9:16</span></figcaption></figure>
+      <figure class="clip" data-cat="scent"><div class="tile" data-src="videos/notes-made-visible.mp4" data-poster="posters/notes-made-visible.jpg"></div><figcaption><span class="tag">Fragrance</span><h3>Notes, made visible</h3><p>Floating the notes around the face turns something you can't film into a story told in three seconds.</p><span class="fmt">Talking UGC · motion graphics · 13 s · 9:16</span></figcaption></figure>
+      <figure class="clip" data-cat="hair"><div class="tile" data-src="videos/summer-hairbrush.mp4" data-poster="posters/summer-hairbrush.jpg"></div><figcaption><span class="tag">Haircare</span><h3>An everyday tool, made seasonal</h3><p>Pool light, fruit and a magazine turn a hairbrush into an object from someone's best summer.</p><span class="fmt">Styled flatlay · 16 s · 9:16</span></figcaption></figure>
+      <figure class="clip" data-cat="skin"><div class="tile" data-src="videos/one-set-three-products.mp4" data-poster="posters/one-set-three-products.jpg"></div><figcaption><span class="tag">Skincare</span><h3>One set, three products</h3><p>A calm shelf and a moving frame let a whole range share one story without crowding each other.</p><span class="fmt">Range story · 17 s · 9:16</span></figcaption></figure>
+
+      <figure class="clip" data-cat="hair"><div class="tile" data-src="videos/haircare-daylight.mp4" data-poster="posters/haircare-daylight.jpg"></div><figcaption><span class="tag">Haircare</span><h3>Real hair, real daylight</h3><p>Filmed outside with nothing hidden, so the before and after can speak for themselves.</p><span class="fmt">Talking UGC · demo · 17 s · 9:16</span></figcaption></figure>
+      <figure class="clip" data-cat="life"><div class="tile" data-src="videos/jewellery-papaya.mp4" data-poster="posters/jewellery-papaya.jpg"></div><figcaption><span class="tag">Jewellery</span><h3>Gold against fruit</h3><p>A warm, unexpected frame makes the scroll stop on the smallest detail.</p><span class="fmt">Styled reel · 16 s · 9:16</span></figcaption></figure>
+      <figure class="clip" data-cat="body"><div class="tile" data-src="videos/screen-inside-the-set.mp4" data-poster="posters/screen-inside-the-set.jpg"></div><figcaption><span class="tag">Body</span><h3>A screen inside the set</h3><p>Placing the demo inside a phone frame turns a simple texture shot into a seasonal scene.</p><span class="fmt">Texture demo · 5 s · 9:16</span></figcaption></figure>
+      <figure class="clip" data-cat="life"><div class="tile" data-src="videos/morning-ritual.mp4" data-poster="posters/morning-ritual.jpg"></div><figcaption><span class="tag">Lifestyle</span><h3>Beyond beauty</h3><p>The same eye for texture, applied to a morning ritual: beans, steam and a slow pour.</p><span class="fmt">Product B-roll · 15 s · 9:16</span></figcaption></figure>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="h-stills">
+    <div class="head">
+      <h2 id="h-stills">Stills from the same set</h2>
+      <p>Every shoot also gives you a set of editorial photos for your feed, product pages and newsletters.</p>
+    </div>
+    <div class="stills">
+      <figure class="still"><div class="frame"><img src="stills/lip-oil-grid.jpg" alt="Nine-photo grid of a lip oil styled with red chillies, honey and glossy lips" loading="lazy"></div><figcaption><b>Warm and glossy</b>Nine frames, one colour story, planned to sit together on a grid.</figcaption></figure>
+      <figure class="still"><div class="frame"><img src="stills/fragrance-grid.jpg" alt="Nine-photo grid of a black perfume bottle with ice cream cones and vanilla" loading="lazy"></div><figcaption><b>Dark bottle, soft dessert</b>Contrast between the bottle and the props carries the whole set.</figcaption></figure>
+      <figure class="still"><div class="frame"><video src="videos/candy-grid.mp4" poster="posters/candy-grid.jpg" muted loop playsinline autoplay aria-label="Moving nine-square grid of a striped festive shower foam"></video></div><figcaption><b>A grid that moves</b>A festive pattern made for the feed, cut to one rhythm.</figcaption></figure>
+    </div>
+  </section>
+
+  <section class="section" id="services" aria-labelledby="h-services">
+    <div class="head"><h2 id="h-services">What you get</h2><p>Built for paid social. Rates and packages come back within 24 hours of your email.</p></div>
+    <ul class="services">
+      <li><h3>Hooks to test</h3><p>3 to 5 hook variations per video, each filmed differently, ready for A/B tests.</p></li>
+      <li><h3>Every placement</h3><p>9:16, 4:5 and 1:1 cuts, with and without captions and music.</p></li>
+      <li><h3>Raw footage</h3><p>B-roll and raw clips for your own editors, plus editorial stills for catalogue and carousel ads.</p></li>
+      <li><h3>Usage rights</h3><p>Paid usage for 3, 6 or 12 months, with whitelisting or Spark Ads on request.</p></li>
+    </ul>
+  </section>
+
+  <section class="section" aria-labelledby="h-results">
+    <div class="head"><h2 id="h-results">Results</h2><p>A monthly hotel and spa client runs its Meta ads on Reels I film. One offer Reel, September 2026.</p></div>
+    <div class="res">
+      <div class="hero-num">
+        <b>€0.09</b>
+        <p>per link click, about <em>5× cheaper</em> than the average Meta travel ad.</p>
+        <div class="bar" role="img" aria-label="Cost per link click: Linda's Reel €0.09, travel average $0.51, all industries $0.70">
+          <div><span>Linda's Reel</span><i class="me" style="width:14%"></i><span>€0.09</span></div>
+          <div><span>Travel average</span><i style="width:73%"></i><span>$0.51</span></div>
+          <div><span>All industries</span><i class="all" style="width:100%"></i><span>$0.70</span></div>
+        </div>
+      </div>
+      <div class="side">
+        <div class="stat"><b>1,475</b><span>link clicks from one Reel</span></div>
+        <div class="stat"><b>128,159</b><span>impressions in one month</span></div>
+        <div class="stat"><b>Above average</b><span>Meta's own rating for engagement and conversion on this ad</span></div>
+      </div>
+    </div>
+    <p class="source">Benchmarks: <a href="https://wordstream.com/blog/facebook-ads-benchmarks-2025" target="_blank" rel="noopener">WordStream Facebook Ads Benchmarks 2025</a>, traffic campaigns, median cost per click (US data, April 2024 to June 2025). €0.09 is about $0.10.</p>
+  </section>
+
+  <section class="section brands-sec" aria-labelledby="h-brands">
+    <div class="head"><h2 id="h-brands">Trusted by 60+ beauty brands</h2><p>From global names to indie labels, across skincare, haircare, makeup and fragrance.</p></div>
+    <div class="marquee" role="img" aria-label="Brands: Morphe, K18, MADARA, VT Cosmetics, Emerald Parfums, Tangle Teezer, PÜR, Rahua, L:A Bruket, Loving Tan, Revox, Sugarbear, Equa, Pudaier, WHIPPED">
+      <div class="mrow"><span>Morphe</span><i>·</i><span>K18</span><i>·</i><span>MADARA</span><i>·</i><span>VT Cosmetics</span><i>·</i><span>Emerald Parfums</span><i>·</i><span>Tangle Teezer</span><i>·</i><span>PÜR</span><i>·</i><span>Rahua</span><i>·</i><span>Morphe</span><i>·</i><span>K18</span><i>·</i><span>MADARA</span><i>·</i><span>VT Cosmetics</span><i>·</i><span>Emerald Parfums</span><i>·</i><span>Tangle Teezer</span><i>·</i><span>PÜR</span><i>·</i><span>Rahua</span><i>·</i></div>
+      <div class="mrow rev"><span>L:A Bruket</span><i>·</i><span>Loving Tan</span><i>·</i><span>Revox</span><i>·</i><span>Sugarbear</span><i>·</i><span>Equa</span><i>·</i><span>Pudaier</span><i>·</i><span>WHIPPED</span><i>·</i><span>L:A Bruket</span><i>·</i><span>Loving Tan</span><i>·</i><span>Revox</span><i>·</i><span>Sugarbear</span><i>·</i><span>Equa</span><i>·</i><span>Pudaier</span><i>·</i><span>WHIPPED</span><i>·</i></div>
+    </div>
+    <div class="marquee-foot"><span>Skincare · Haircare · Makeup · Fragrance · Body</span><span>Brands in the UK, US and across Europe</span></div>
+  </section>
+
+  <section class="section" aria-labelledby="h-words">
+    <div class="head"><h2 id="h-words">Kind words</h2></div>
+    <div class="quotes">
+      <blockquote><p>“We absolutely adore the video! The visuals, the mood, the creative direction. It's truly everything we hoped for, and more.”</p><cite>WHIPPED</cite></blockquote>
+      <blockquote><p>“We've checked your content, and wow, you crushed it! It's been wonderful to team up with you. Hope this is just the beginning.”</p><cite>M&amp;M agency</cite></blockquote>
+      <blockquote><p>“The team really loved your content. It's been very well received.”</p><cite>Equa</cite></blockquote>
+      <blockquote><p>“Thank you so much for the beautiful video you created for us! It's fantastic.”</p><cite>Pudaier</cite></blockquote>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="h-process">
+    <div class="head"><h2 id="h-process">How we work</h2><p>Usually five working days from the moment the product arrives.</p></div>
+    <ol class="steps">
+      <li><strong>Brief</strong><span>You share the product, the goal and any must-say points.</span></li>
+      <li><strong>Hooks and angles</strong><span>You approve the idea, the set and three to five hooks before filming.</span></li>
+      <li><strong>Agree</strong><span>A short contract, usage rights and a 50% deposit.</span></li>
+      <li><strong>Shoot</strong><span>Filmed in natural light, with stills from the same set.</span></li>
+      <li><strong>Deliver</strong><span>First cut in five working days, one round of changes, then final files in every ratio.</span></li>
+    </ol>
+  </section>
+
+  <section class="section" id="about" aria-labelledby="h-about">
+    <div class="about">
+      <figure class="pic"><div class="frame"><img src="stills/linda.jpg" alt="Linda Alksne in a black dress" loading="lazy"></div></figure>
+      <div class="txt">
+        <h2 id="h-about" class="eyebrow">About</h2>
+        <p class="lead">I'm Linda. I think about the ad before I think about the shot.</p>
+        <p>As a Certified Creative Strategist, I start every brief with who the ad is for, what will stop them, and what they need to hear in the first three seconds. Then I make it look beautiful. I work with skincare, haircare, makeup and fragrance brands across Europe, the UK and the US.</p>
+        <dl class="facts">
+          <div><dt>Based in</dt><dd>Europe, Latvia</dd></div>
+          <div><dt>Focus</dt><dd>Beauty, skincare, haircare</dd></div>
+          <div><dt>Credentials</dt><dd>Certified Creative Strategist</dd></div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact" aria-labelledby="h-contact">
+    <p class="eyebrow">Contact · replies within 24 hours</p>
+    <h2 id="h-contact">If your brand is looking for a creator with <em>creative vision</em>, I'm here.</h2>
+    <p class="mute">Send the product and your goal. You'll get rates, hook ideas and a timeline within 24 hours.</p>
+    <a class="email" id="email" href="mailto:lindaalksneugc@gmail.com?subject=Project%20for%20Linda">lindaalksneugc@gmail.com</a>
+    <div class="under">
+      <button type="button" id="copy">Copy address</button>
+      <span class="mute" id="copied" aria-live="polite"></span>
+      <a href="https://www.instagram.com/lindaalksneugc/" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://www.tiktok.com/@linda.travelbeauty" target="_blank" rel="noopener">TikTok</a>
+    </div>
+  </section>
+
+  <footer class="foot"><span>© 2026 Linda Alksne</span><span>Beauty UGC &amp; creative direction · Europe, Latvia</span></footer>
+</div>
+
+<script>
+(function () {
+  var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var io = 'IntersectionObserver' in window ? new IntersectionObserver(function (es) {
+    es.forEach(function (e) {
+      var v = e.target;
+      if (e.isIntersecting && !reduce) { var p = v.play(); if (p) p.catch(function () {}); }
+      else if (!e.isIntersecting) v.pause();
+    });
+  }, { threshold: .35 }) : null;
+
+  var current = null;
+  document.querySelectorAll('.tile[data-src]').forEach(function (t) {
+    var v = document.createElement('video');
+    v.src = t.getAttribute('data-src');
+    v.poster = t.getAttribute('data-poster') || '';
+    v.muted = true; v.loop = true; v.playsInline = true; v.preload = 'metadata';
+    v.setAttribute('muted', ''); v.setAttribute('playsinline', '');
+    t.appendChild(v);
+    if (io) io.observe(v); else if (!reduce) v.autoplay = true;
+    if (t.hasAttribute('data-nosound')) return;
+    var b = document.createElement('button');
+    b.type = 'button'; b.className = 'snd'; b.textContent = 'Sound on';
+    t.appendChild(b);
+    function toggle() {
+      if (current && current !== v) { current.muted = true; current.parentNode.querySelector('.snd').textContent = 'Sound on'; }
+      v.muted = !v.muted; b.textContent = v.muted ? 'Sound on' : 'Sound off';
+      current = v.muted ? null : v;
+      if (!v.muted) { v.currentTime = 0; var p = v.play(); if (p) p.catch(function () {}); }
+    }
+    b.addEventListener('click', function (e) { e.stopPropagation(); toggle(); });
+    v.addEventListener('click', toggle);
+  });
+
+  var filters = document.querySelectorAll('.filters button');
+  filters.forEach(function (b) {
+    b.addEventListener('click', function () {
+      var f = b.getAttribute('data-f');
+      filters.forEach(function (x) { x.setAttribute('aria-pressed', String(x === b)); });
+      document.querySelectorAll('.grid .clip').forEach(function (c) {
+        c.hidden = f !== 'all' && c.getAttribute('data-cat') !== f;
+      });
+    });
+  });
+
+  document.getElementById('copy').addEventListener('click', function () {
+    var el = document.getElementById('email'), out = document.getElementById('copied');
+    function fallback() {
+      var r = document.createRange(); r.selectNodeContents(el);
+      var s = getSelection(); s.removeAllRanges(); s.addRange(r);
+      out.textContent = 'Selected. Press Cmd or Ctrl + C to copy.';
+    }
+    if (navigator.clipboard) navigator.clipboard.writeText(el.textContent.trim()).then(function () { out.textContent = 'Copied.'; }, fallback);
+    else fallback();
+  });
+})();
+</script>
+</body>
+</html>
